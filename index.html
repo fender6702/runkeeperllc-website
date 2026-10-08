@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="RunKeeper LLC is an IT consultancy in Seoul providing digital transformation and software solutions for retail and international trade businesses.">
+<title>RunKeeper LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single column, left-aligned, with a ruled "registry" strip echoing a Korean business registration certificate */
+:root{
+  --bg:#F3F5F2; --surface:#FFFFFF; --ink:#16211D; --muted:#5A6863; --line:#D5DDD8;
+  --celadon:#2E7A69; --celadon-soft:#E1EEE9; --brass:#A67A2E;
+  --f-display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1614; --surface:#16201D; --ink:#E6ECE9; --muted:#9AA8A3; --line:#2A3833;
+  --celadon:#6CC2AC; --celadon-soft:#1C2E29; --brass:#D2A75B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1614; --surface:#16201D; --ink:#E6ECE9; --muted:#9AA8A3; --line:#2A3833;
+  --celadon:#6CC2AC; --celadon-soft:#1C2E29; --brass:#D2A75B; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;padding-inline:20px;padding-block:0}
+.wrap{max-width:1040px;margin:0 auto}
+a{color:var(--celadon)}
+a:focus-visible{outline:2px solid var(--celadon);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:22px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.mark{width:28px;height:28px;border-radius:50%;border:2px solid var(--celadon);position:relative}
+.mark::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--celadon)}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+nav a:hover{color:var(--ink)}
+
+.hero{padding-block:72px 56px;display:grid;gap:22px;max-width:780px}
+.hero h1{font-size:clamp(34px,6vw,58px);font-weight:700;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--celadon)}
+.hero p.lede{font-size:19px;color:var(--muted);max-width:62ch}
+.hero .where{font-family:var(--f-mono);font-size:13px;color:var(--brass)}
+
+section{padding-block:56px;border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:8px;margin-bottom:32px;max-width:640px}
+.sec-head h2{font-size:clamp(26px,3.6vw,34px)}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc{background:var(--surface);padding:26px;display:grid;gap:10px;align-content:start;min-width:0}
+.svc h3{font-size:19px}
+.svc p{color:var(--muted);font-size:15px}
+.svc .tag{font-family:var(--f-mono);font-size:12px;color:var(--celadon)}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px}
+.step{display:grid;gap:8px;min-width:0}
+.step .n{font-family:var(--f-mono);font-size:13px;color:var(--brass)}
+.step h3{font-size:18px}
+.step p{color:var(--muted);font-size:15px}
+
+.founder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px}
+@media (max-width:760px){.founder{grid-template-columns:1fr;gap:32px}}
+.founder .bio{display:grid;gap:16px;align-content:start}
+.founder .bio h3{font-size:26px}
+.founder .bio .role{color:var(--celadon);font-weight:600}
+.founder .bio p{color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 18px 22px;display:grid;gap:2px}
+.tl li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--celadon)}
+.tl .yr{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl .co{font-weight:600}
+.tl .pos{font-size:14px;color:var(--muted)}
+
+.registry{background:var(--surface);border:1px solid var(--line);overflow-x:auto}
+.registry table{width:100%;border-collapse:collapse;min-width:420px}
+.registry th,.registry td{text-align:left;padding:14px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.registry tr:last-child th,.registry tr:last-child td{border-bottom:0}
+.registry th{width:34%;font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--celadon-soft)}
+.registry td{font-size:15px}
+.copy{margin-left:10px;font:500 12px var(--f-mono);color:var(--celadon);background:none;border:1px solid var(--line);padding:3px 8px;cursor:pointer}
+.copy:hover{border-color:var(--celadon)}
+
+footer{padding-block:28px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (prefers-reduced-motion:no-preference){a,button{transition:color .15s,border-color .15s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>RunKeeper</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#founder">Founder</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <span class="where">Teheran-ro, Gangnam-gu, Seoul</span>
+      <h1>IT consulting and software for <em>retail and trade</em> businesses.</h1>
+      <p class="lede">RunKeeper LLC helps traditional retailers and international trading companies move their operations onto reliable digital systems, from strategy through to delivery.</p>
+    </div>
+
+    <section id="services">
+      <div class="sec-head">
+        <span class="label">Services</span>
+        <h2>What we do</h2>
+      </div>
+      <div class="services">
+        <div class="svc">
+          <span class="tag">Consulting</span>
+          <h3>Digital transformation</h3>
+          <p>Review of current processes and systems, and a practical roadmap for moving operations online.</p>
+        </div>
+        <div class="svc">
+          <span class="tag">Retail</span>
+          <h3>Retail and O2O systems</h3>
+          <p>Point-of-sale, inventory and membership systems that connect physical stores with online channels.</p>
+        </div>
+        <div class="svc">
+          <span class="tag">Trade</span>
+          <h3>Trade operations software</h3>
+          <p>Order management, shipment tracking and multi-currency invoicing for cross-border trading businesses.</p>
+        </div>
+        <div class="svc">
+          <span class="tag">Build</span>
+          <h3>Product and platform development</h3>
+          <p>Product design and delivery of web platforms and mobile apps, including management of development partners.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="sec-head">
+        <span class="label">Approach</span>
+        <h2>How an engagement runs</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="n">Step 1</span><h3>Assess</h3><p>We map the client's current operations, data and systems, and agree on measurable goals.</p></div>
+        <div class="step"><span class="n">Step 2</span><h3>Design</h3><p>We define the product scope, system architecture and data-security requirements.</p></div>
+        <div class="step"><span class="n">Step 3</span><h3>Build</h3><p>We deliver the solution in stages, with our own team or vetted development partners.</p></div>
+        <div class="step"><span class="n">Step 4</span><h3>Operate</h3><p>We support launch, staff training and ongoing improvement once the system is live.</p></div>
+      </div>
+    </section>
+
+    <section id="founder">
+      <div class="sec-head">
+        <span class="label">Founder</span>
+        <h2>Leadership</h2>
+      </div>
+      <div class="founder">
+        <div class="bio">
+          <h3>Wei Zhang</h3>
+          <span class="role">Founder &amp; CEO</span>
+          <p>Wei Zhang has more than 20 years of experience in internet products, FinTech and digital retail. He was a founding team member of Alibaba's Hema (Freshhippo), where he led product and operations, and later served as General Manager at a Ping An Group technology subsidiary.</p>
+          <p>Earlier he managed products at Tencent, PPS.tv, Renren and Baidu, and founded technology companies in China and the Philippines. He holds a degree from Beijing University of Posts and Telecommunications.</p>
+        </div>
+        <ol class="tl" aria-label="Career history">
+          <li><span class="yr">2024 – present</span><span class="co">RunKeeper LLC, Korea</span><span class="pos">Founder &amp; CEO</span></li>
+          <li><span class="yr">2019 – 2023</span><span class="co">NOONA, Philippines</span><span class="pos">Founder &amp; CEO</span></li>
+          <li><span class="yr">2018 – 2019</span><span class="co">Ping An Group – Shanghai One Account Technology</span><span class="pos">General Manager</span></li>
+          <li><span class="yr">2014 – 2017</span><span class="co">Alibaba Group – Hema (Freshhippo)</span><span class="pos">Founding team, Head of Product &amp; Operations</span></li>
+          <li><span class="yr">2012 – 2014</span><span class="co">Beijing Cheji Technology</span><span class="pos">Founder</span></li>
+          <li><span class="yr">2011 – 2012</span><span class="co">Baidu</span><span class="pos">Manager, Wireless Business Unit</span></li>
+          <li><span class="yr">2009 – 2011</span><span class="co">Renren Inc.</span><span class="pos">Director of Value-added Products</span></li>
+          <li><span class="yr">2007 – 2009</span><span class="co">PPS.tv</span><span class="pos">Product Director</span></li>
+          <li><span class="yr">2004 – 2007</span><span class="co">Tencent</span><span class="pos">Product Manager</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sec-head">
+        <span class="label">Company information</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="registry">
+        <table>
+          <tr><th scope="row">Legal name</th><td>RunKeeper LLC</td></tr>
+          <tr><th scope="row">Registered address</th><td>116 Teheran-ro, Gangnam-gu, Seoul, Republic of Korea</td></tr>
+          <tr><th scope="row">Languages</th><td>English, Chinese, Korean</td></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 RunKeeper LLC. All rights reserved.</span>
+    <span>Seoul, Republic of Korea</span>
+  </footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.copy), t=el.textContent;
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+    try{navigator.clipboard.writeText(t).then(done,function(){sel(el)})}catch(e){sel(el)}
+  });
+});
+function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+</script>
+</body>
+</html>
